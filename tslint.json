@@ -1,0 +1,82 @@
+{
+    "defaultSeverity" : "error",
+    "extends"         : [
+        "tslint:all"
+    ],
+    "jsRules"         : {
+    },
+    "rules"           : {
+        "ban-ts-ignore"            : false,
+        "completed-docs"           : false,
+        "curly"                    : [
+            true,
+            "ignore-same-line"
+        ],
+        "file-name-casing"         : false,
+        "increment-decrement"      : false,
+        "max-line-length"          : false,
+        "member-ordering"          : false,
+        "newline-per-chained-call" : false,
+        "no-any"                   : false,
+        "no-console"               : false,
+        "no-import-side-effect"    : false,
+        "no-inferrable-types"      : false,
+        "no-magic-numbers"         : [
+            true,
+            {
+                "allowed-numbers" : [
+                    -1,
+                    0,
+                    1,
+                    2,
+                    3,
+                    5,
+                    8,
+                    10,
+                    16,
+                    25,
+                    32,
+                    50,
+                    64,
+                    100,
+                    128
+                ]
+            }
+        ],
+        "no-non-null-assertion"    : false,
+        "no-require-imports"       : false,
+        "no-submodule-imports"     : false,
+        "no-var-requires"          : false,
+        "no-unsafe-any"            : false,
+        "quotemark"                : [
+            true,
+            "single"
+        ],
+        "typedef-whitespace"       : [
+            true,
+            {
+                "call-signature"       : "onespace",
+                "index-signature"      : "space",
+                "parameter"            : "onespace",
+                "property-declaration" : "space",
+                "variable-declaration" : "space"
+            },
+            {
+                "call-signature"       : "onespace",
+                "index-signature"      : "space",
+                "parameter"            : "onespace",
+                "property-declaration" : "space",
+                "variable-declaration" : "space"
+            }
+        ],
+        "variable-name"            : {
+            "options" : [
+                "ban-keywords",
+                "check-format",
+                "allow-pascal-case"
+            ]
+        }
+    },
+    "rulesDirectory"  : [
+    ]
+}

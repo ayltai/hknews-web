@@ -1,0 +1,32 @@
+.Card {
+  display: inline-block;
+  width: 480px;
+  height: 640px;
+  margin: 2.5em;
+}
+
+.Subheader {
+  font-size: 90%;
+}
+
+.Title {
+  font-size: 120% !important;
+  font-weight: bold !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Description {
+  overflow: hidden;
+}
+
+.Media {
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.Actions {
+  display: block !important;
+  text-align: right;
+}

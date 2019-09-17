@@ -1,0 +1,104 @@
+version: 2
+
+references:
+
+  ## Cache
+
+  cache_key: &cache_key
+    key: cache-{{ checksum "package.json" }}
+  restore_cache: &restore_cache
+    restore_cache:
+      <<: *cache_key
+  save_cache: &save_cache
+    save_cache:
+      <<: *cache_key
+      paths:
+        - ./node_modules
+
+  ## Docker image configuration
+
+  config: &config
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:12
+    environment:
+      TERM: dumb
+
+jobs:
+
+  dependencies:
+    <<: *config
+    steps:
+      - checkout
+      - *restore_cache
+      - run:
+          name: Install dependencies
+          command: npm i -D
+      - *save_cache
+
+  check_stylesheet:
+    <<: *config
+    steps:
+      - checkout
+      - *restore_cache
+      - run:
+          name: Run linter for stylesheet files
+          command: ./node_modules/.bin/stylelint src/**/*.css public/**/*.css !build/**
+
+  check_typescript:
+    <<: *config
+    steps:
+      - checkout
+      - *restore_cache
+      - run:
+          name: Run linter for typescript files
+          command: ./node_modules/.bin/tslint --project tsconfig.json src/**/*.ts?
+
+  test:
+    <<: *config
+    steps:
+      - checkout
+      - *restore_cache
+      - run:
+          name: Execute unit tests
+          command: npm run test
+      - store_artifacts:
+        path: coverage
+        destination: /coverage/
+
+  build:
+    <<: *config
+    steps:
+      - checkout
+      - *restore_cache
+      - run:
+          name: Build for production
+          command: npm run build
+      - store_artifacts:
+          path: build
+          destination: /build/
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - dependencies
+      - check_stylesheet:
+          requires:
+            - dependencies
+      - check_typescript:
+          requires:
+            - dependencies
+      - test:
+          requires:
+            - dependencies
+            - check_stylesheet
+            - check_typescript
+      - build:
+          requires:
+            - dependencies
+            - test
+          filters:
+            branches:
+              only:
+                - master
