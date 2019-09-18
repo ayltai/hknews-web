@@ -63,8 +63,8 @@ jobs:
           name: Execute unit tests
           command: npm run test
       - store_artifacts:
-        path: coverage
-        destination: /coverage/
+          path: coverage
+          destination: /coverage/
 
   build:
     <<: *config
