@@ -19,6 +19,7 @@
     ],
     "scripts": {
         "check": "./node_modules/.bin/stylelint src/**/*.css public/**/*.css !build/** && ./node_modules/.bin/tslint --project tsconfig.json src/**/*.ts?",
+        "codacy": "./node_modules/.bin/codacy-coverage",
         "codecov": "./node_modules/.bin/codecov",
         "serve": "./node_modules/.bin/serve -s build",
         "start": "react-scripts start",
@@ -37,6 +38,7 @@
         "react-timeago": "^4.4.0"
     },
     "devDependencies": {
+        "codacy-coverage": "^3.4.0",
         "codecov": "^3.5.0",
         "enzyme": "^3.10.0",
         "enzyme-adapter-react-16": "^1.14.0",
