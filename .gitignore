@@ -13,7 +13,6 @@
 
 # Generated
 /build
-*-lock.json
 
 # Transient
 npm-debug.log*

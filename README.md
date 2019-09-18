@@ -1,6 +1,7 @@
 # HK News Web
 
 [![GitHub Actions](https://github.com/actions/setup-node/workflows/Main%20workflow/badge.svg)](https://github.com/ayltai/hknews-web/actions)
+[![CircleCI](https://img.shields.io/circleci/project/github/ayltai/hknews-web/master.svg?style=flat)](https://circleci.com/gh/ayltai/hknews-web)
 [![Release](https://img.shields.io/github/release/ayltai/hknews-web.svg?style=flat)](https://github.com/ayltai/hknews-web/releases)
 [![License](https://img.shields.io/github/license/ayltai/hknews-web.svg?style=flat)](https://github.com/ayltai/hknews-web/blob/master/LICENSE)
 
