@@ -13,7 +13,7 @@ interface IProps {
 export const App : React.FunctionComponent<IProps> = (props : any) : React.ReactElement => (
     <Admin
         dataProvider={dataProvider}
-        i18nProvider={() : object => require('./lang')}
+        i18nProvider={() : object => require('./lang').lang}
         {...props}>
         {Object.entries(Config.CATEGORIES).map((entry : any[number]) => (
             <MainResource
