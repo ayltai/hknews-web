@@ -23,12 +23,8 @@
         "serve": "./node_modules/.bin/serve -s build",
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
+        "test": "react-scripts test --coverage --coverageDirectory=coverage",
         "eject": "react-scripts eject"
-    },
-    "jest": {
-        "coverageDirectory": "./coverage/",
-        "collectCoverage": true
     },
     "dependencies": {
         "@material-ui/core": "^4.4.2",
