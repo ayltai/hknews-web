@@ -2,6 +2,10 @@
 
 [![GitHub Actions](https://github.com/actions/setup-node/workflows/Main%20workflow/badge.svg)](https://github.com/ayltai/hknews-web/actions)
 [![CircleCI](https://img.shields.io/circleci/project/github/ayltai/hknews-web/master.svg?style=flat)](https://circleci.com/gh/ayltai/hknews-web)
+[![Code Quality](https://img.shields.io/codacy/grade/905ca9343bb94e668420a5a33be855b5.svg?style=flat)](https://app.codacy.com/app/AlanTai/hknews-web/dashboard)
+[![Code Coverage](https://img.shields.io/codacy/coverage/905ca9343bb94e668420a5a33be855b5.svg?style=flat)](https://app.codacy.com/app/AlanTai/hknews-web/dashboard)
+[![Code Coverage](https://img.shields.io/codecov/c/github/ayltai/hknews-web.svg?style=flat)](https://codecov.io/gh/ayltai/hknews-web)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3190/badge)](https://bestpractices.coreinfrastructure.org/projects/3190)
 [![Release](https://img.shields.io/github/release/ayltai/hknews-web.svg?style=flat)](https://github.com/ayltai/hknews-web/releases)
 [![License](https://img.shields.io/github/license/ayltai/hknews-web.svg?style=flat)](https://github.com/ayltai/hknews-web/blob/master/LICENSE)
 

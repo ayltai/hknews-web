@@ -19,11 +19,16 @@
     ],
     "scripts": {
         "check": "./node_modules/.bin/stylelint src/**/*.css public/**/*.css !build/** && ./node_modules/.bin/tslint --project tsconfig.json src/**/*.ts?",
+        "codecov": "./node_modules/.bin/codecov",
         "serve": "./node_modules/.bin/serve -s build",
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test --coverage --coverageDirectory=coverage",
+        "test": "react-scripts test",
         "eject": "react-scripts eject"
+    },
+    "jest" : {
+        "coverageDirectory" : "./coverage/",
+        "collectCoverage" : true
     },
     "dependencies": {
         "@material-ui/core": "^4.4.2",
@@ -36,6 +41,7 @@
         "react-timeago": "^4.4.0"
     },
     "devDependencies": {
+        "codecov": "^3.5.0",
         "enzyme": "^3.10.0",
         "enzyme-adapter-react-16": "^1.14.0",
         "serve": "^11.1.0",

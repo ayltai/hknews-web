@@ -65,6 +65,9 @@ jobs:
       - store_artifacts:
           path: coverage
           destination: /coverage/
+      - run:
+          name: Upload coverage to Codecov
+          command: npm run codecov
 
   build:
     <<: *config
