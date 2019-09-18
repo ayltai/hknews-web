@@ -26,9 +26,9 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
-    "jest" : {
-        "coverageDirectory" : "./coverage/",
-        "collectCoverage" : true
+    "jest": {
+        "coverageDirectory": "./coverage/",
+        "collectCoverage": true
     },
     "dependencies": {
         "@material-ui/core": "^4.4.2",
