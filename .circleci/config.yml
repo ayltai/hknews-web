@@ -68,6 +68,9 @@ jobs:
       - run:
           name: Upload coverage to Codecov
           command: npm run codecov
+      - run:
+          name: Upload coverage to Codacy
+          command: npm run codacy
 
   build:
     <<: *config
