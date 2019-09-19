@@ -24,7 +24,7 @@
         "serve": "./node_modules/.bin/serve -s build",
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test --coverage --coverageDirectory=coverage",
+        "test": "react-scripts test --no-watch --coverage --coverageDirectory=coverage",
         "eject": "react-scripts eject"
     },
     "dependencies": {
