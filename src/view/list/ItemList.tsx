@@ -5,11 +5,23 @@ import { ItemFilter } from './ItemFilter';
 
 const { List } = require('react-admin');
 
-export const ItemList : React.FunctionComponent<{}> = (props : any) : React.ReactElement => (
-    <List
-        bulkActionButtons={false}
-        filters={<ItemFilter />}
-        {...props}>
-        <CardList />
-    </List>
-);
+export class ItemList extends React.PureComponent<{}> {
+    public constructor(props : any) {
+        super(props);
+    }
+
+    public componentDidUpdate : () => void = () : void => {
+        window.scrollTo(0, 0);
+    }
+
+    public render() : React.ReactElement {
+        return (
+            <List
+                bulkActionButtons={false}
+                filters={<ItemFilter />}
+                {...this.props}>
+                <CardList />
+            </List>
+        );
+    }
+}
