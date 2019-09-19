@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, Theme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import React from 'react';
 
@@ -12,15 +12,18 @@ interface IProps {
     title? : string;
 }
 
+const theme : Theme = createMuiTheme({
+    palette : {
+        type : 'dark',
+    },
+});
+
 export const App : React.FunctionComponent<IProps> = (props : any) : React.ReactElement => (
-    <ThemeProvider theme={createMuiTheme({
-        palette : {
-            type : 'light',
-        },
-    })}>
+    <ThemeProvider theme={theme}>
         <Admin
             dataProvider={dataProvider}
             i18nProvider={() : object => require('./lang').lang}
+            theme={theme}
             {...props}>
             {Object.entries(Config.CATEGORIES).map((entry : any[number]) => (
                 <MainResource

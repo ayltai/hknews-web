@@ -50,9 +50,14 @@ Serves aggregated news from 10+ local news publishers in Hong Kong. Made with ‚ù
    ```
 
 ### Run development server
-```sh
-npm start
-```
+1. Export environment variable for the API endpoint
+   ```sh
+   export REACT_APP_API_ENDPOINT=https://hknews.dev
+   ```
+2. Start the server
+   ```sh
+   npm start
+   ```
 
 ### Run linters
 ```sh
@@ -65,11 +70,15 @@ npm run test
 ```
 
 ### Run production server
-1. Build for production
+1. Export environment variable for the API endpoint
+   ```sh
+   export REACT_APP_API_ENDPOINT=https://hknews.dev
+   ```
+2. Build for production
    ```sh
    npm run build
    ```
-2. Serve production build files
+3. Serve production build files
    ```sh
    npm run serve
    ```

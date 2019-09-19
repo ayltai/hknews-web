@@ -18,6 +18,7 @@ export class ItemList extends React.PureComponent<{}> {
         return (
             <List
                 bulkActionButtons={false}
+                exporter={false}
                 filters={<ItemFilter />}
                 {...this.props}>
                 <CardList />
