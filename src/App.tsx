@@ -5,6 +5,7 @@ import React from 'react';
 import * as Config from './Config';
 import { MainResource } from './core/MainResource';
 import { dataProvider } from './data/DataProvider';
+import { MainLayout } from './view/layout/MainLayout';
 
 const { Admin, Resource } = require('react-admin');
 
@@ -21,6 +22,7 @@ const theme : Theme = createMuiTheme({
 export const App : React.FunctionComponent<IProps> = (props : any) : React.ReactElement => (
     <ThemeProvider theme={theme}>
         <Admin
+            appLayout={MainLayout}
             dataProvider={dataProvider}
             i18nProvider={() : object => require('./lang').lang}
             theme={theme}

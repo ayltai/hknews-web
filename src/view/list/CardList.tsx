@@ -7,14 +7,14 @@ import './CardList.css';
 
 const { TextField, RichTextField, ShowButton } = require('react-admin');
 
-export interface IProps {
+interface IProps {
     basePath? : string;
     classes?  : any;
     data?     : any;
     ids?      : string[];
 }
 
-export interface IStyles {
+interface IStyles {
     card                    : {};
     descriptionWithMedia    : {};
     descriptionWithoutMedia : {};
