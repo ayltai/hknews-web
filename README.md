@@ -1,6 +1,5 @@
 # HK News Web
 
-[![GitHub Actions](https://github.com/actions/setup-node/workflows/Main%20workflow/badge.svg)](https://github.com/ayltai/hknews-web/actions)
 [![CircleCI](https://img.shields.io/circleci/project/github/ayltai/hknews-web/master.svg?style=flat)](https://circleci.com/gh/ayltai/hknews-web)
 [![Code Quality](https://img.shields.io/codacy/grade/905ca9343bb94e668420a5a33be855b5.svg?style=flat)](https://app.codacy.com/app/AlanTai/hknews-web/dashboard)
 [![Code Coverage](https://img.shields.io/codacy/coverage/905ca9343bb94e668420a5a33be855b5.svg?style=flat)](https://app.codacy.com/app/AlanTai/hknews-web/dashboard)

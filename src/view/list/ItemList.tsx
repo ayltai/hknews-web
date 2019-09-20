@@ -5,7 +5,7 @@ import { ItemFilter } from './ItemFilter';
 
 const { List } = require('react-admin');
 
-export class ItemList extends React.PureComponent<{}> {
+export class ItemList extends React.PureComponent<{}, {}> {
     public constructor(props : any) {
         super(props);
     }
