@@ -10,7 +10,7 @@ interface IProps {
     icon : any;
 }
 
-export const MainResource : React.FunctionComponent<IProps> = (props : IProps) : React.ReactElement => (
+export const AppResource : React.FunctionComponent<IProps> = (props : IProps) : React.ReactElement => (
     <Resource
         name={props.name}
         list={ItemList}

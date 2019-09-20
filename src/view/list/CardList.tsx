@@ -64,7 +64,7 @@ const styles : (theme : Theme) => IStyles = (theme : Theme) : IStyles => ({
 
 const avatarSize : number = 40;
 
-const RawCardList : React.FunctionComponent<IProps> = (props : IProps) : React.ReactElement => {
+const BaseCardList : React.FunctionComponent<IProps> = (props : IProps) : React.ReactElement => {
     const { classes } = props;
 
     return (
@@ -120,4 +120,4 @@ const RawCardList : React.FunctionComponent<IProps> = (props : IProps) : React.R
     );
 };
 
-export const CardList : any = withStyles(styles)(RawCardList);
+export const CardList : any = withStyles(styles)(BaseCardList);
