@@ -61,7 +61,8 @@ export const dataProvider : (type : string, resource : string, params? : any) =>
                     break;
 
                 default:
-                    if (response.json.hasOwnProperty('recordId')) response.json.id = response.json.recordId;
+                    if (response.json.hasOwnProperty('recordId')) response.json.id    = response.json.recordId;
+                    if (response.json.hasOwnProperty('title'))    response.json.title = response.json.title.replace(/&#(\d+);/g, (substring : string, arg : any) : string => String.fromCharCode(arg));
 
                     return {
                         data : response.json,
