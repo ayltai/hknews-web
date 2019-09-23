@@ -1,7 +1,8 @@
 import { IconButton, SvgIcon, Switch, Typography } from '@material-ui/core';
 import { createMuiTheme, MuiThemeProvider, Theme } from '@material-ui/core/styles';
+import { PaletteOptions } from '@material-ui/core/styles/createPalette';
 import React from 'react';
-import JssProvider from 'react-jss/lib/JssProvider';
+import { JssProvider } from 'react-jss';
 
 import * as Config from './Config';
 import { AppResource } from './core/AppResource';
@@ -14,22 +15,22 @@ interface IProps {
 }
 
 export const App : React.FunctionComponent<IProps> = (props : any) : React.ReactElement => {
+    const palette : PaletteOptions = Config.PALETTE;
+
     const [ state, setState ] = React.useState({
         checked : false,
         theme : {
-            palette : {
-                type : Config.DEFAULT_THEME,
-            },
+            palette,
         },
     });
 
     const toggleTheme : (event : React.ChangeEvent<HTMLInputElement>) => void = (event : React.ChangeEvent<HTMLInputElement>) : void => {
+        palette.type = event.target.checked ? 'dark' : 'light';
+
         setState({
             checked : event.target.checked,
             theme   : {
-                palette : {
-                    type : event.target.checked ? 'dark' : 'light',
-                },
+                palette,
             },
         });
     };
