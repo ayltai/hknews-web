@@ -35,7 +35,7 @@
         "react-admin": "^2.9.6",
         "react-dom": "^16.9.0",
         "react-image-lightbox": "^5.1.0",
-        "react-jss": "^10.0.0",
+        "react-jss": "^8.6.1",
         "react-scripts": "^3.1.2",
         "react-timeago": "^4.4.0"
     },
