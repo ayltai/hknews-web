@@ -4,6 +4,13 @@
 [![Code Quality](https://img.shields.io/codacy/grade/905ca9343bb94e668420a5a33be855b5.svg?style=flat)](https://app.codacy.com/app/AlanTai/hknews-web/dashboard)
 [![Code Coverage](https://img.shields.io/codacy/coverage/905ca9343bb94e668420a5a33be855b5.svg?style=flat)](https://app.codacy.com/app/AlanTai/hknews-web/dashboard)
 [![Code Coverage](https://img.shields.io/codecov/c/github/ayltai/hknews-web.svg?style=flat)](https://codecov.io/gh/ayltai/hknews-web)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ayltai_hknews-web&metric=bugs)](https://sonarcloud.io/dashboard?id=ayltai_hknews-web)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=ayltai_hknews-web&metric=sqale_index)](https://sonarcloud.io/dashboard?id=ayltai_hknews-web)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ayltai_hknews-web&metric=code_smells)](https://sonarcloud.io/dashboard?id=ayltai_hknews-web)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ayltai_hknews-web&metric=alert_status)](https://sonarcloud.io/dashboard?id=ayltai_hknews-web)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ayltai_hknews-web&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ayltai_hknews-web)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ayltai_hknews-web&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=ayltai_hknews-web)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ayltai_hknews-web&metric=security_rating)](https://sonarcloud.io/dashboard?id=ayltai_hknews-web)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3190/badge)](https://bestpractices.coreinfrastructure.org/projects/3190)
 [![Release](https://img.shields.io/github/release/ayltai/hknews-web.svg?style=flat)](https://github.com/ayltai/hknews-web/releases)
 [![License](https://img.shields.io/github/license/ayltai/hknews-web.svg?style=flat)](https://github.com/ayltai/hknews-web/blob/master/LICENSE)
@@ -49,9 +56,10 @@ Serves aggregated news from 10+ local news publishers in Hong Kong. Made with ‚ù
    ```
 
 ### Run development server
-1. Export environment variable for the API endpoint
+1. Export environment variables for the API endpoint and project URL
    ```sh
    export REACT_APP_API_ENDPOINT=https://hknews.dev
+   export REACT_APP_PROJECT_URL=https://github.com/ayltai/hknews-web
    ```
 2. Start the server
    ```sh
@@ -69,9 +77,10 @@ npm run test
 ```
 
 ### Run production server
-1. Export environment variable for the API endpoint
+1. Export environment variable for the API endpoint and project URL
    ```sh
    export REACT_APP_API_ENDPOINT=https://hknews.dev
+   export REACT_APP_PROJECT_URL=https://github.com/ayltai/hknews-web
    ```
 2. Build for production
    ```sh
@@ -89,9 +98,12 @@ This software is made with the support of open source projects:
 * [Create React App](https://github.com/facebook/create-react-app)
 * [React Admin](https://github.com/marmelab/react-admin)
 * [Typescript](https://github.com/microsoft/TypeScript)
+* [TSLint](https://palantir.github.io/tslint/)
+* [Stylelint](https://stylelint.io/)
 * [Material UI](https://github.com/mui-org/material-ui)
 * [react-image-lightbox](https://github.com/frontend-collective/react-image-lightbox)
 * [react-timeago](https://github.com/nmn/react-timeago)
 
 ... and closed source services:
 * [CircleCI](https://circleci.com): Continuous integration and delivery
+* [SonarCloud](https://sonarcloud.io): Online service for code quality and security

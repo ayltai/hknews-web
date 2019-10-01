@@ -13,6 +13,7 @@
 
 # Generated
 /build
+/.scannerwork
 
 # Transient
 npm-debug.log*

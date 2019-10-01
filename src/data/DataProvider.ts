@@ -5,7 +5,7 @@ const { fetchUtils, GET_LIST, GET_MANY, GET_MANY_REFERENCE, GET_ONE } = require(
 const sources : string[] = [ '蘋果日報', '東方日報', '星島日報', '星島即時', '經濟日報', '成報', '明報', '頭條日報', '頭條即時', '晴報', '信報', '香港電台', '南華早報', '英文虎報', '文匯報' ];
 const days    : number   = 2;
 
-export const dataProvider : (type : string, resource : string, params? : any) => Promise<any> = (type : string, resource : string, params : any = {}) : Promise<any> => {
+export const dataProvider : (type : string, resource : string, params? : any) => Promise<any> = async (type : string, resource : string, params : any = {}) : Promise<any> => {
     const convertDataToHttpRequest : () => string | undefined = () : string | undefined => {
         if (resource === 'sources') {
             switch (type) {
@@ -16,7 +16,7 @@ export const dataProvider : (type : string, resource : string, params? : any) =>
                 default:
                     if (Config.IS_DEBUG) console.error(`Unsupported fetch action type ${type} for resource ${resource} and params ${JSON.stringify(params)}`);
 
-                    return;
+                    return undefined;
             }
         }
 
@@ -45,7 +45,7 @@ export const dataProvider : (type : string, resource : string, params? : any) =>
                                 item.id = item.recordId;
                             } else if (item.hasOwnProperty('name')) {
                                 item.id       = item.name;
-                                item.imageUrl = Config.API_ENDPOINT + item.imageUrl;
+                                item.imageUrl = Config.API_ENDPOINT + String(item.imageUrl);
                             }
 
                             return item;
@@ -74,7 +74,7 @@ export const dataProvider : (type : string, resource : string, params? : any) =>
     };
 
     const url : string | undefined = convertDataToHttpRequest();
-    if (url) return fetchUtils.fetchJson(url).then(convertHttpResponseFromData);
+    if (Boolean(url)) return fetchUtils.fetchJson(url).then(convertHttpResponseFromData);
 
     return Promise.resolve({
         data : [],

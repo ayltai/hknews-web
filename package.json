@@ -18,7 +18,7 @@
         "hknews"
     ],
     "scripts": {
-        "check": "./node_modules/.bin/stylelint src/**/*.css public/**/*.css !build/** && ./node_modules/.bin/tslint --project tsconfig.json src/**/*.ts?",
+        "check": "./node_modules/.bin/stylelint src/**/*.css public/**/*.css !build/** && ./node_modules/.bin/tslint --project tsconfig.json src/**/*.{ts,tsx}",
         "codacy": "cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
         "codecov": "./node_modules/.bin/codecov",
         "serve": "./node_modules/.bin/serve -s build",
@@ -53,6 +53,7 @@
         "stylelint": "^11.0.0",
         "stylelint-config-standard": "^19.0.0",
         "tslint": "^5.20.0",
+        "tslint-sonarts": "^1.9.0",
         "@types/enzyme": "^3.10.3",
         "@types/enzyme-adapter-react-16": "^1.0.5",
         "@types/jest": "^24.0.18",

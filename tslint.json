@@ -1,31 +1,32 @@
 {
     "defaultSeverity" : "error",
     "extends"         : [
-        "tslint:all"
+        "tslint:all",
+        "tslint-sonarts"
     ],
     "jsRules"         : {
     },
     "rules"           : {
-        "ban-ts-ignore"            : false,
-        "completed-docs"           : false,
-        "curly"                    : [
+        "ban-ts-ignore"               : false,
+        "completed-docs"              : false,
+        "curly"                       : [
             true,
             "ignore-same-line"
         ],
-        "file-name-casing"         : false,
-        "increment-decrement"      : false,
-        "max-line-length"          : false,
-        "member-ordering"          : false,
-        "newline-per-chained-call" : false,
-        "no-any"                   : false,
-        "no-console"               : false,
-        "no-implicit-dependencies" : [
+        "file-name-casing"            : false,
+        "increment-decrement"         : false,
+        "max-line-length"             : false,
+        "member-ordering"             : false,
+        "newline-per-chained-call"    : false,
+        "no-any"                      : false,
+        "no-console"                  : false,
+        "no-implicit-dependencies"    : [
             true,
             "dev"
         ],
-        "no-import-side-effect"    : false,
-        "no-inferrable-types"      : false,
-        "no-magic-numbers"         : [
+        "no-import-side-effect"       : false,
+        "no-inferrable-types"         : false,
+        "no-magic-numbers"            : [
             true,
             {
                 "allowed-numbers" : [
@@ -47,16 +48,18 @@
                 ]
             }
         ],
-        "no-non-null-assertion"    : false,
-        "no-require-imports"       : false,
-        "no-submodule-imports"     : false,
-        "no-var-requires"          : false,
-        "no-unsafe-any"            : false,
-        "quotemark"                : [
+        "no-nested-template-literals" : false,
+        "no-non-null-assertion"       : false,
+        "no-require-imports"          : false,
+        "no-submodule-imports"        : false,
+        "no-var-requires"             : false,
+        "no-unsafe-any"               : false,
+        "object-literal-sort-keys"    : false,
+        "quotemark"                   : [
             true,
             "single"
         ],
-        "typedef-whitespace"       : [
+        "typedef-whitespace"          : [
             true,
             {
                 "call-signature"       : "onespace",
@@ -73,7 +76,7 @@
                 "variable-declaration" : "space"
             }
         ],
-        "variable-name"            : {
+        "variable-name"               : {
             "options" : [
                 "ban-keywords",
                 "check-format",

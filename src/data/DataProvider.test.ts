@@ -1,13 +1,11 @@
 import { dataProvider } from './DataProvider';
 
-it('calls source API without errors', () : void => {
-    const response : any = dataProvider('GET_LIST', 'sources');
+const request : (source : string) => any = (source : string) : any => dataProvider('GET_LIST', source);
 
-    expect(response.data).not.toBeNull();
+it('calls source API without errors', () : void => {
+    expect(request('sources').data).not.toBeNull();
 });
 
 it('calls item API without errors', () : void => {
-    const response : any = dataProvider('GET_LIST', '港聞');
-
-    expect(response.data).not.toBeNull();
+    expect(request('港聞').data).not.toBeNull();
 });

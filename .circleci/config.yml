@@ -52,7 +52,7 @@ jobs:
       - *restore_cache
       - run:
           name: Run linter for typescript files
-          command: ./node_modules/.bin/tslint --project tsconfig.json src/**/*.ts?
+          command: ./node_modules/.bin/tslint --project tsconfig.json src/**/*.{ts,tsx}
 
   test:
     <<: *config
@@ -71,6 +71,15 @@ jobs:
       - run:
           name: Upload coverage to Codacy
           command: npm run codacy
+      - run:
+          name: Export environment variables for SonarCloud
+          command: export SONAR_SCANNER_VERSION=4.0.0.1744 && export SONAR_SCANNER_HOME=$HOME/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux && export SONAR_SCANNER_OPTS="-server" && export PATH=$SONAR_SCANNER_HOME/bin:$PATH
+      - run:
+          name: Download Sonar Scanner
+          command: rm -rf $SONAR_SCANNER_HOME && mkdir -p $SONAR_SCANNER_HOME && curl -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip && unzip $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/ && rm $HOME/.sonar/sonar-scanner.zip
+      - run:
+          name: Upload coverage to SonarCloud
+          command: sonar-scanner -Dsonar.projectKey=ayltai_hknews-web -Dsonar.organization=ayltai -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
 
   build:
     <<: *config
