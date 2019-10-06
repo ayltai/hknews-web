@@ -32,7 +32,7 @@
         "@material-ui/icons": "^4.4.3",
         "@material-ui/styles": "^4.5.0",
         "react": "^16.10.2",
-        "react-admin": "^2.9.6",
+        "react-admin": "^2.9.7",
         "react-dom": "^16.10.2",
         "react-image-lightbox": "^5.1.0",
         "react-jss": "^8.6.1",
