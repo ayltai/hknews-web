@@ -33,7 +33,7 @@
         "@material-ui/styles": "^4.5.0",
         "@types/node": "^12.11.7",
         "@types/react-dom": "^16.9.3",
-        "@types/react-jss": "^8.6.4",
+        "@types/react-jss": "^10.0.0",
         "@types/react-timeago": "^4.1.1",
         "react": "^16.11.0",
         "react-admin": "^2.9.8",
