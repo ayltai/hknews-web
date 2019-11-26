@@ -1,3 +1,4 @@
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { configure, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
@@ -10,53 +11,44 @@ configure({
     adapter : new Adapter(),
 });
 
-const defaultStoreForList : {} = {
-    admin: {
-        resources: {
-            foo: {
-                list: {
-                    ids: [],
-                    params: {},
-                    selectedIds: [],
-                    total: 0,
-                },
-            },
-        },
-    },
-};
-
 it('mount without errors', () : void => {
     render(
-        <TestContext store={defaultStoreForList}>
-        <CardList
-            basePath='/'
-            data={{
-                id1 : {
-                    description : '',
-                    images      : [{
-                        description : '',
-                        imageUrl    : '',
-                    }],
-                    publishDate : '',
-                    source      : {
-                        name : '',
-                    },
-                    title       : '',
+        <TestContext>
+            <MuiThemeProvider theme={createMuiTheme({
+                palette : {
+                    type : 'dark',
                 },
-                id2 : {
-                    description : '',
-                    images      : [{
-                        description : '',
-                        imageUrl    : '',
-                    }],
-                    publishDate : '',
-                    source      : {
-                        name : '',
-                    },
-                    title       : '',
-                },
-            }}
-            ids={[ 'id1', 'id2' ]} />
+            })}>
+                <CardList
+                    basePath='/'
+                    data={{
+                        id1 : {
+                            description : '',
+                            images      : [{
+                                description : '',
+                                imageUrl    : '',
+                            }],
+                            publishDate : '',
+                            source      : {
+                                name : '',
+                            },
+                            title       : '',
+                        },
+                        id2 : {
+                            description : '',
+                            images      : [{
+                                description : '',
+                                imageUrl    : '',
+                            }],
+                            publishDate : '',
+                            source      : {
+                                name : '',
+                            },
+                            title       : '',
+                        },
+                    }}
+                    ids={[ 'id1', 'id2' ]} />
+            </MuiThemeProvider>
         </TestContext>,
     );
 });

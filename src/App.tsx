@@ -1,6 +1,7 @@
 import { IconButton, SvgIcon, Switch, Typography } from '@material-ui/core';
 import { createMuiTheme, MuiThemeProvider, Theme } from '@material-ui/core/styles';
 import { PaletteOptions } from '@material-ui/core/styles/createPalette';
+import polyglotI18nProvider from 'ra-i18n-polyglot';
 import React from 'react';
 import { JssProvider } from 'react-jss';
 
@@ -41,7 +42,7 @@ export const App : React.FunctionComponent<IProps> = (props : any) : React.React
         <JssProvider>
             <MuiThemeProvider theme={mainTheme}>
                 <Admin
-                    appLayout={(layoutProps : any) : React.ReactElement => (
+                    layout={(layoutProps : any) : React.ReactElement => (
                         <Layout
                             appBar={(appBarProps : any) : React.ReactElement => (
                                 <AppBar
@@ -71,7 +72,7 @@ export const App : React.FunctionComponent<IProps> = (props : any) : React.React
                         />
                     )}
                     dataProvider={dataProvider}
-                    i18nProvider={() : object => require('./lang').lang}
+                    i18nProvider={polyglotI18nProvider(() : object => require('./lang').lang)}
                     theme={mainTheme}
                     {...props}>
                     {Object.entries(Config.CATEGORIES).map((entry : any[number]) => (

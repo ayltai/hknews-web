@@ -1,3 +1,4 @@
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { configure, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
@@ -27,16 +28,22 @@ const defaultStoreForList : {} = {
 
 it('mount without errors', () : void => {
     render(
-        <TestContext store={defaultStoreForList}>
-            <ItemList
-                basePath='/'
-                ids={[]}
-                location={{
-                    pathname : '',
-                }}
-                resource='foo'>
-                <div />
-            </ItemList>
+        <TestContext initialState={defaultStoreForList}>
+            <MuiThemeProvider theme={createMuiTheme({
+                palette : {
+                    type : 'dark',
+                },
+            })}>
+                <ItemList
+                    basePath='/'
+                    ids={[]}
+                    location={{
+                        pathname : '',
+                    }}
+                    resource='foo'>
+                    <div />
+                </ItemList>
+            </MuiThemeProvider>
         </TestContext>,
     );
 });
