@@ -43,7 +43,7 @@
         "react-jss": "^8.6.1",
         "react-scripts": "^3.3.0",
         "react-timeago": "^4.4.0",
-        "typescript": "^3.7.3"
+        "typescript": "^3.7.4"
     },
     "devDependencies": {
         "@types/enzyme": "^3.10.4",
