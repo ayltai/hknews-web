@@ -90,8 +90,6 @@ This software is made with the support of open source projects:
 * [React](https://github.com/facebook/react)
 * [Create React App](https://github.com/facebook/create-react-app)
 * [React Admin](https://github.com/marmelab/react-admin)
-* [Typescript](https://github.com/microsoft/TypeScript)
-* [TSLint](https://palantir.github.io/tslint/)
 * [Stylelint](https://stylelint.io/)
 * [Material UI](https://github.com/mui-org/material-ui)
 * [react-image-lightbox](https://github.com/frontend-collective/react-image-lightbox)
