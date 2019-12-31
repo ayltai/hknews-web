@@ -1,17 +1,11 @@
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import { configure, render } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render } from 'enzyme';
 import React from 'react';
+import { TestContext } from 'react-admin';
 
 import { ItemList } from './ItemList';
 
-const { TestContext } = require('react-admin');
-
-configure({
-    adapter : new Adapter(),
-});
-
-const defaultStoreForList : {} = {
+const defaultStoreForList = {
     admin: {
         resources: {
             foo: {
@@ -26,7 +20,7 @@ const defaultStoreForList : {} = {
     },
 };
 
-it('mount without errors', () : void => {
+it('mount without errors', () => {
     render(
         <TestContext initialState={defaultStoreForList}>
             <MuiThemeProvider theme={createMuiTheme({

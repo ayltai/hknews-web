@@ -1,20 +1,17 @@
 import React from 'react';
+import { Resource } from 'react-admin';
 
 import { ItemShow } from '../view/detail/ItemShow';
 import { ItemList } from '../view/list/ItemList';
 
-const { Resource } = require('react-admin');
-
-interface IProps {
-    name : string;
-    icon : any;
-}
-
-export const AppResource : React.FunctionComponent<IProps> = (props : IProps) : React.ReactElement => (
+export const AppResource = props => (
     <Resource
         name={props.name}
+        icon={props.icon}
         list={ItemList}
         show={ItemShow}
-        icon={props.icon}
+        options={{
+            label : props.name
+        }}
         {...props} />
 );

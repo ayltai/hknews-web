@@ -1,12 +1,12 @@
+import { fetchUtils, GET_LIST, GET_MANY, GET_MANY_REFERENCE, GET_ONE } from 'react-admin';
+
 import * as Config from '../Config';
 
-const { fetchUtils, GET_LIST, GET_MANY, GET_MANY_REFERENCE, GET_ONE } = require('react-admin');
+const sources = [ '蘋果日報', '東方日報', '星島日報', '星島即時', '經濟日報', '成報', '明報', '頭條日報', '頭條即時', '晴報', '信報', '香港電台', '南華早報', '英文虎報', '文匯報' ];
+const days    = 2;
 
-const sources : string[] = [ '蘋果日報', '東方日報', '星島日報', '星島即時', '經濟日報', '成報', '明報', '頭條日報', '頭條即時', '晴報', '信報', '香港電台', '南華早報', '英文虎報', '文匯報' ];
-const days    : number   = 2;
-
-export const dataProvider : (type : string, resource : string, params? : any) => Promise<any> = async (type : string, resource : string, params : any = {}) : Promise<any> => {
-    const convertDataToHttpRequest : () => string | undefined = () : string | undefined => {
+export const dataProvider = async (type, resource, params = {}) => {
+    const convertDataToHttpRequest = () => {
         if (resource === 'sources') {
             switch (type) {
                 case GET_LIST:
@@ -34,13 +34,13 @@ export const dataProvider : (type : string, resource : string, params? : any) =>
         }
     };
 
-    const convertHttpResponseFromData : (response : any) => any = (response : any) : any => {
+    const convertHttpResponseFromData = response => {
         if (response) {
             switch (type) {
                 case GET_LIST:
                 case GET_MANY_REFERENCE:
                     if (response.json.hasOwnProperty('totalElements')) {
-                        response.json.content.map((item : any) => {
+                        response.json.content.map(item => {
                             if (item.hasOwnProperty('recordId')) {
                                 item.id = item.recordId;
                             } else if (item.hasOwnProperty('name')) {
@@ -62,7 +62,7 @@ export const dataProvider : (type : string, resource : string, params? : any) =>
 
                 default:
                     if (response.json.hasOwnProperty('recordId')) response.json.id    = response.json.recordId;
-                    if (response.json.hasOwnProperty('title'))    response.json.title = response.json.title.replace(/&#(\d+);/g, (substring : string, arg : any) : string => String.fromCharCode(arg));
+                    if (response.json.hasOwnProperty('title'))    response.json.title = response.json.title.replace(/&#(\d+);/g, (substring, arg) => String.fromCharCode(arg));
 
                     return {
                         data : response.json,
@@ -73,7 +73,7 @@ export const dataProvider : (type : string, resource : string, params? : any) =>
         return {};
     };
 
-    const url : string | undefined = convertDataToHttpRequest();
+    const url = convertDataToHttpRequest();
     if (Boolean(url)) return fetchUtils.fetchJson(url).then(convertHttpResponseFromData);
 
     return Promise.resolve({

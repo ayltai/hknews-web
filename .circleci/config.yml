@@ -45,15 +45,6 @@ jobs:
           name: Run linter for stylesheet files
           command: ./node_modules/.bin/stylelint src/**/*.css public/**/*.css !build/**
 
-  check_typescript:
-    <<: *config
-    steps:
-      - checkout
-      - *restore_cache
-      - run:
-          name: Run linter for typescript files
-          command: ./node_modules/.bin/tslint --project tsconfig.json src/**/*.{ts,tsx}
-
   test:
     <<: *config
     steps:
@@ -102,14 +93,10 @@ workflows:
       - check_stylesheet:
           requires:
             - dependencies
-      - check_typescript:
-          requires:
-            - dependencies
       - test:
           requires:
             - dependencies
             - check_stylesheet
-            - check_typescript
       - build:
           requires:
             - dependencies

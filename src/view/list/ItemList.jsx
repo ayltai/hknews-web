@@ -1,25 +1,21 @@
 import React from 'react';
+import { List } from 'react-admin';
 
 import { CardList } from './CardList';
 import { ItemFilter } from './ItemFilter';
 
-const { List } = require('react-admin');
-
-export class ItemList extends React.PureComponent<{}, {}> {
-    public constructor(props : any) {
-        super(props);
-    }
-
-    public componentDidUpdate : () => void = () : void => {
+export class ItemList extends React.PureComponent {
+    componentDidUpdate = () => {
         window.scrollTo(0, 0);
     }
 
-    public render() : React.ReactElement {
+    render() {
         return (
             <List
                 bulkActionButtons={false}
                 exporter={false}
                 filters={<ItemFilter />}
+                title='ra.page.list'
                 {...this.props}>
                 <CardList />
             </List>

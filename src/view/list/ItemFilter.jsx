@@ -1,8 +1,7 @@
 import React from 'react';
+import { Filter, ReferenceInput, SelectInput } from 'react-admin';
 
-const { Filter, ReferenceInput, SelectInput } = require('react-admin');
-
-export const ItemFilter : React.FunctionComponent<{}> = (props : any) : React.ReactElement => (
+export const ItemFilter = props => (
     <Filter {...props}>
         <ReferenceInput
             label='Publisher'

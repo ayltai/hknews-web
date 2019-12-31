@@ -1,30 +1,21 @@
 import React from 'react';
+import { ArrayField, DateField, ImageField, RichTextField, SimpleShowLayout, ShowController, ShowView, TextField } from 'react-admin';
 
 import { Gallery } from '../list/Gallery';
 
-const { ArrayField, DateField, ImageField, RichTextField, SimpleShowLayout, ShowController, ShowView, TextField } = require('react-admin');
-
-const Title : ({ record } : any) => React.ReactElement = ({ record } : any) : React.ReactElement => (
+const Title = record => (
     <span>{record ? `${record.title}` : ''}</span>
 );
 
-interface IProps {
-    record : any;
-}
-
-export class ItemShow extends React.PureComponent<IProps, {}> {
-    public constructor(props : any) {
-        super(props);
-    }
-
-    public componentDidUpdate : () => void = () : void => {
+export class ItemShow extends React.PureComponent {
+    componentDidUpdate = () => {
         window.scrollTo(0, 0);
     }
 
-    public render() : React.ReactElement {
+    render() {
         return (
             <ShowController {...this.props}>
-                {(controllerProps : any) : React.ReactElement => (
+                {controllerProps => (
                     <ShowView
                         title={<Title record={this.props.record} />}
                         {...controllerProps}

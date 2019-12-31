@@ -9,13 +9,17 @@
 .Title {
   font-size: 120% !important;
   font-weight: bold !important;
+  padding-bottom: 0.75em;
   overflow: hidden;
+  display: block;
   text-overflow: ellipsis;
   white-space: nowrap;
+
 }
 
 .Description {
   overflow: hidden;
+  display: inline-block;
 }
 
 .Media {

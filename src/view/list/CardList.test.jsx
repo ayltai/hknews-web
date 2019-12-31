@@ -1,17 +1,11 @@
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import { configure, render } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render } from 'enzyme';
 import React from 'react';
+import { TestContext } from 'react-admin';
 
 import { CardList } from './CardList';
 
-const { TestContext } = require('react-admin');
-
-configure({
-    adapter : new Adapter(),
-});
-
-it('mount without errors', () : void => {
+it('mount without errors', () => {
     render(
         <TestContext>
             <MuiThemeProvider theme={createMuiTheme({

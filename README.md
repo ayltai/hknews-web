@@ -40,8 +40,6 @@ Serves aggregated news from 10+ local news publishers in Hong Kong. Made with ‚ù
 ## HK News Infrastructure
 [hknews-infrastructure](https://github.com/ayltai/hknews-infrastructure)
 
-## Development
-
 ### Installation
 1. Install [NodeJS](https://nodejs.org)
 2. Install dependencies
@@ -50,12 +48,13 @@ Serves aggregated news from 10+ local news publishers in Hong Kong. Made with ‚ù
    ```
 
 ### Run development server
-1. Export environment variables for the API endpoint and project URL
+1. Refer to [hknews-backend](https://github.com/ayltai/hknews-backend) project to run HK News backend server locally
+2. Export environment variables for the API endpoint and project URL
    ```sh
-   export REACT_APP_API_ENDPOINT=https://hknews.dev
+   export REACT_APP_API_ENDPOINT=http://localhost:8080
    export REACT_APP_PROJECT_URL=https://github.com/ayltai/hknews-web
    ```
-2. Start the server
+3. Start the server
    ```sh
    npm start
    ```

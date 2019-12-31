@@ -1,24 +1,10 @@
 import React from 'react';
+import { SingleFieldList } from 'react-admin';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
-const { SingleFieldList } = require('react-admin');
-
-interface IProps {
-    children : any;
-    ids?     : string[];
-    data?    : any[string];
-    caption  : string;
-    source   : string;
-}
-
-interface IState {
-    index  : number;
-    isOpen : boolean;
-}
-
-export class Gallery extends React.PureComponent<IProps, IState> {
-    public constructor(props : IProps) {
+export class Gallery extends React.PureComponent {
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -27,26 +13,26 @@ export class Gallery extends React.PureComponent<IProps, IState> {
         };
     }
 
-    private getImages : () => any[] = () : any[] => {
-        return Object.entries(this.getEntries()).map((record : any[]) => ({
+    getImages = () => {
+        return Object.entries(this.getEntries()).map(record => ({
             caption : record[1][this.props.caption],
             source  : record[1][this.props.source],
         }));
     }
 
-    private getEntries : () => any = () : any => this.props.ids && this.props.data ? this.props.ids.map((id : string) => this.props.data[id]) : [];
+    getEntries = () => this.props.ids && this.props.data ? this.props.ids.map(id => this.props.data[id]) : [];
 
-    public render : () => React.ReactNode = () : React.ReactNode => {
+    render = () => {
         const { source, ...props } = this.props;
         const { index, isOpen }    = this.state;
 
-        const entries : any   = this.getEntries();
-        const images  : any[] = this.getImages();
+        const entries = this.getEntries();
+        const images  = this.getImages();
 
-        const children : any = React.Children.map(this.props.children, (child : any) => {
-            const element : any = React.cloneElement(child, {
-                onClick : (event : any) : void => this.setState({
-                    index  : Math.max(0, entries ? entries.findIndex((entry : any) => entry[this.props.source] === event.target.src) : 0),
+        const children = React.Children.map(this.props.children, child => {
+            const element = React.cloneElement(child, {
+                onClick : event => this.setState({
+                    index  : Math.max(0, entries ? entries.findIndex(entry => entry[this.props.source] === event.target.src) : 0),
                     isOpen : true,
                 }),
             });
@@ -67,13 +53,13 @@ export class Gallery extends React.PureComponent<IProps, IState> {
                         nextSrc={index + 1 < images.length ? images[(index + 1) % images.length].source : undefined}
                         prevSrc={index - 1 >= 0 ? images[(index + images.length - 1) % images.length].source : undefined}
                         imageCaption={images[index].caption}
-                        onCloseRequest={() : void => this.setState({
+                        onCloseRequest={() => this.setState({
                             isOpen : false,
                         })}
-                        onMoveNextRequest={() : void => this.setState({
+                        onMoveNextRequest={() => this.setState({
                             index : (index + 1) % images.length,
                         })}
-                        onMovePrevRequest={() : void => this.setState({
+                        onMovePrevRequest={() => this.setState({
                             index : (index + images.length - 1) % images.length,
                         })}
                     />
