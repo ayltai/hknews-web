@@ -32,7 +32,7 @@ const styles = theme => ({
             width : 440,
         },
         [theme.breakpoints.up('md')] : {
-            width: 440,
+            width : 440,
         },
     },
     descriptionWithMedia    : {
