@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrayField, DateField, ImageField, RichTextField, SimpleShowLayout, ShowController, ShowView, TextField } from 'react-admin';
 
 import { Gallery } from '../list/Gallery';
+import './ItemShow.css';
 
 const Title = record => (
     <span>{record ? `${record.title}` : ''}</span>
@@ -21,6 +22,10 @@ export class ItemShow extends React.PureComponent {
                         {...controllerProps}
                         {...this.props}>
                         <SimpleShowLayout>
+                            <RichTextField
+                                className='Title'
+                                label=''
+                                source='title' />
                             <RichTextField
                                 label=''
                                 source='description' />
