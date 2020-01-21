@@ -1,6 +1,7 @@
 export const IS_DEBUG     = process.env.NODE_ENV !== 'production';
-export const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || '';
-export const PROJECT_URL  = process.env.REACT_APP_PROJECT_URL || '';
+export const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || (IS_DEBUG ? 'http://localhost:8080' : 'https://hknews.dev');
+export const PROJECT_URL  = process.env.REACT_APP_PROJECT_URL || 'https://github.com/ayltai/hknews-web';
+export const APP_NAME     = process.env.REACT_APP_APP_NAME || 'HK News';
 
 export const PALETTE = {
     error     : {
@@ -15,6 +16,8 @@ export const PALETTE = {
     type      : 'light',
 };
 
+export const SOURCES = [ '蘋果日報', '東方日報', '星島日報', '星島即時', '經濟日報', '成報', '明報', '頭條日報', '頭條即時', '晴報', '信報', '香港電台', '南華早報', '英文虎報', '文匯報', ];
+
 export const CATEGORIES = {
     港聞 : require('@material-ui/icons/Home').default,
     國際 : require('@material-ui/icons/Language').default,
@@ -26,3 +29,8 @@ export const CATEGORIES = {
     副刊 : require('@material-ui/icons/VideogameAsset').default,
     教育 : require('@material-ui/icons/School').default,
 };
+
+export const FETCH_DAYS            = 2;
+export const NEWS_PER_PAGE         = 12;
+export const NEWS_PER_PAGE_OPTIONS = [ 12, 24, 48, 96 ];
+export const AVATAR_SIZE           = 40;

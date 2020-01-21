@@ -4,21 +4,16 @@ import { ArrayField, DateField, ImageField, RichTextField, SimpleShowLayout, Sho
 import { Gallery } from '../list/Gallery';
 import './ItemShow.css';
 
-const Title = record => (
-    <span>{record ? `${record.title}` : ''}</span>
-);
-
 export class ItemShow extends React.PureComponent {
     componentDidUpdate = () => {
         window.scrollTo(0, 0);
-    }
+    };
 
-    render() {
+    render = () => {
         return (
             <ShowController {...this.props}>
                 {controllerProps => (
                     <ShowView
-                        title={<Title record={this.props.record} />}
                         {...controllerProps}
                         {...this.props}>
                         <SimpleShowLayout>
@@ -38,8 +33,7 @@ export class ItemShow extends React.PureComponent {
                                         caption='description'>
                                         <ImageField
                                             label=''
-                                            source='imageUrl'
-                                            title='description' />
+                                            source='imageUrl' />
                                     </Gallery>
                                 </ArrayField>
                             )}
@@ -55,5 +49,5 @@ export class ItemShow extends React.PureComponent {
                 )}
             </ShowController>
         );
-    }
+    };
 }

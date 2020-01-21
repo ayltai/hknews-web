@@ -2,8 +2,8 @@ import { fetchUtils, GET_LIST, GET_MANY, GET_MANY_REFERENCE, GET_ONE } from 'rea
 
 import * as Config from '../Config';
 
-const sources = [ '蘋果日報', '東方日報', '星島日報', '星島即時', '經濟日報', '成報', '明報', '頭條日報', '頭條即時', '晴報', '信報', '香港電台', '南華早報', '英文虎報', '文匯報' ];
-const days    = 2;
+const sources = Config.SOURCES;
+const days    = Config.FETCH_DAYS;
 
 export const dataProvider = async (type, resource, params = {}) => {
     const convertDataToHttpRequest = () => {
@@ -11,7 +11,9 @@ export const dataProvider = async (type, resource, params = {}) => {
             switch (type) {
                 case GET_LIST:
                 case GET_MANY_REFERENCE:
-                    return `${Config.API_ENDPOINT}/${resource}?page=${params.pagination ? params.pagination.page - 1 : 0}&size=${params.pagination ? params.pagination.perPage : 25}`;
+                    return `${Config.API_ENDPOINT}/${resource}?page=${params.pagination
+                        ? params.pagination.page - 1
+                        : 0}&size=${params.pagination ? params.pagination.perPage : 25}`;
 
                 default:
                     if (Config.IS_DEBUG) console.error(`Unsupported fetch action type ${type} for resource ${resource} and params ${JSON.stringify(params)}`);
@@ -24,7 +26,10 @@ export const dataProvider = async (type, resource, params = {}) => {
             case GET_LIST:
             case GET_MANY:
             case GET_MANY_REFERENCE:
-                return `${Config.API_ENDPOINT}/items/${params.filter && params.filter.source ? `${params.filter.source},${params.filter.source.substr(0, 2)}即時` : sources.join(',')}/${resource},即時${resource}/${days}?page=${params.pagination ? params.pagination.page - 1 : 0}&size=${params.pagination ? params.pagination.perPage : 10}`;
+                return `${Config.API_ENDPOINT}/items/${params.filter && params.filter.source
+                    ? `${params.filter.source},${params.filter.source.substr(0, 2)}即時`
+                    : sources.join(',')}/${resource},即時${resource}/${days}?page=${params.pagination
+                    ? params.pagination.page - 1 : 0}&size=${params.pagination ? params.pagination.perPage : Config.NEWS_PER_PAGE}`;
 
             case GET_ONE:
                 return `${Config.API_ENDPOINT}/item/${params.id}`;
@@ -39,11 +44,11 @@ export const dataProvider = async (type, resource, params = {}) => {
             switch (type) {
                 case GET_LIST:
                 case GET_MANY_REFERENCE:
-                    if (response.json.hasOwnProperty('totalElements')) {
+                    if (Object.prototype.hasOwnProperty.call(response.json, 'totalElements')) {
                         response.json.content.map(item => {
-                            if (item.hasOwnProperty('recordId')) {
+                            if (Object.prototype.hasOwnProperty.call(item, 'recordId')) {
                                 item.id = item.recordId;
-                            } else if (item.hasOwnProperty('name')) {
+                            } else if (Object.prototype.hasOwnProperty.call(item, 'name')) {
                                 item.id       = item.name;
                                 item.imageUrl = Config.API_ENDPOINT + String(item.imageUrl);
                             }
@@ -61,8 +66,8 @@ export const dataProvider = async (type, resource, params = {}) => {
                     break;
 
                 default:
-                    if (response.json.hasOwnProperty('recordId')) response.json.id    = response.json.recordId;
-                    if (response.json.hasOwnProperty('title'))    response.json.title = response.json.title.replace(/&#(\d+);/g, (substring, arg) => String.fromCharCode(arg));
+                    if (Object.prototype.hasOwnProperty.call(response.json, 'recordId')) response.json.id = response.json.recordId;
+                    if (Object.prototype.hasOwnProperty.call(response.json, 'title')) response.json.title = response.json.title.replace(/&#(\d+);/g, (substring, arg) => String.fromCharCode(arg));
 
                     return {
                         data : response.json,
@@ -74,7 +79,7 @@ export const dataProvider = async (type, resource, params = {}) => {
     };
 
     const url = convertDataToHttpRequest();
-    if (Boolean(url)) return fetchUtils.fetchJson(url).then(convertHttpResponseFromData);
+    if (url) return fetchUtils.fetchJson(url).then(convertHttpResponseFromData);
 
     return Promise.resolve({
         data : [],

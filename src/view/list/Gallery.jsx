@@ -1,7 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { SingleFieldList } from 'react-admin';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+
+import { decode } from '../../util/StringUtils';
 
 export class Gallery extends React.PureComponent {
     constructor(props) {
@@ -15,10 +18,10 @@ export class Gallery extends React.PureComponent {
 
     getImages = () => {
         return Object.entries(this.getEntries()).map(record => ({
-            caption : record[1][this.props.caption],
+            caption : decode(record[1][this.props.caption]),
             source  : record[1][this.props.source],
         }));
-    }
+    };
 
     getEntries = () => this.props.ids && this.props.data ? this.props.ids.map(id => this.props.data[id]) : [];
 
@@ -29,16 +32,14 @@ export class Gallery extends React.PureComponent {
         const entries = this.getEntries();
         const images  = this.getImages();
 
-        const children = React.Children.map(this.props.children, child => {
-            const element = React.cloneElement(child, {
-                onClick : event => this.setState({
-                    index  : Math.max(0, entries ? entries.findIndex(entry => entry[this.props.source] === event.target.src) : 0),
-                    isOpen : true,
-                }),
-            });
-
-            return element;
-        });
+        const children = React.Children.map(this.props.children, child => React.cloneElement(child, {
+            onClick : event => this.setState({
+                index  : Math.max(0, entries
+                    ? entries.findIndex(entry => entry[source] === event.target.src)
+                    : 0),
+                isOpen : true,
+            }),
+        }));
 
         return (
             <div>
@@ -51,7 +52,8 @@ export class Gallery extends React.PureComponent {
                     <Lightbox
                         mainSrc={images[index].source}
                         nextSrc={index + 1 < images.length ? images[(index + 1) % images.length].source : undefined}
-                        prevSrc={index - 1 >= 0 ? images[(index + images.length - 1) % images.length].source : undefined}
+                        prevSrc={index - 1 >= 0 ? images[(index + images.length - 1) % images.length].source
+                            : undefined}
                         imageCaption={images[index].caption}
                         onCloseRequest={() => this.setState({
                             isOpen : false,
@@ -66,5 +68,13 @@ export class Gallery extends React.PureComponent {
                 )}
             </div>
         );
-    }
+    };
 }
+
+Gallery.propTypes = {
+    ids      : PropTypes.arrayOf(PropTypes.string),
+    data     : PropTypes.arrayOf(PropTypes.object),
+    caption  : PropTypes.string,
+    source   : PropTypes.string,
+    children : PropTypes.arrayOf(PropTypes.element),
+};

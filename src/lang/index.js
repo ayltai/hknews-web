@@ -42,22 +42,17 @@ export const lang = {
         },
         input        : {
             file       : {
-                upload_several :
-                    'Drop some files to upload, or click to select one.',
+                upload_several : 'Drop some files to upload, or click to select one.',
                 upload_single  : 'Drop a file to upload, or click to select it.',
             },
             image      : {
-                upload_several :
-                    'Drop some pictures to upload, or click to select one.',
-                upload_single  :
-                    'Drop a picture to upload, or click to select it.',
+                upload_several : 'Drop some pictures to upload, or click to select one.',
+                upload_single  : 'Drop a picture to upload, or click to select it.',
             },
             references : {
                 all_missing    : 'Unable to find references data.',
-                many_missing   :
-                    'At least one of the associated references no longer appears to be available.',
-                single_missing :
-                    'Associated reference no longer appears to be available.',
+                many_missing   : 'At least one of the associated references no longer appears to be available.',
+                single_missing : 'Associated reference no longer appears to be available.',
             },
             password   : {
                 toggle_visible : 'Hide password',
@@ -67,26 +62,21 @@ export const lang = {
         message      : {
             about               : 'About',
             are_you_sure        : 'Are you sure?',
-            bulk_delete_content :
-                'Are you sure you want to delete this %{name}? |||| Are you sure you want to delete these %{smart_count} items?',
-            bulk_delete_title   :
-                'Delete %{name} |||| Delete %{smart_count} %{name}',
+            bulk_delete_content : 'Are you sure you want to delete this %{name}? |||| Are you sure you want to delete these %{smart_count} items?',
+            bulk_delete_title   : 'Delete %{name} |||| Delete %{smart_count} %{name}',
             delete_content      : 'Are you sure you want to delete this item?',
             delete_title        : 'Delete %{name} #%{id}',
             details             : 'Details',
-            error               :
-                "A client error occurred and your request couldn't be completed.",
+            error               : 'A client error occurred and your request couldn\'t be completed.',
             invalid_form        : 'The form is not valid. Please check for errors',
             loading             : 'The page is loading, just a moment please',
             no                  : 'No',
-            not_found           :
-                'Either you typed a wrong URL, or you followed a bad link.',
+            not_found           : 'Either you typed a wrong URL, or you followed a bad link.',
             yes                 : 'Yes',
         },
         navigation   : {
             no_results             : 'No news found in this category',
-            no_more_results        :
-                'The page number %{page} is out of boundaries. Try the previous page.',
+            no_more_results        : 'The page number %{page} is out of boundaries. Try the previous page.',
             page_out_of_boundaries : 'Page number %{page} out of boundaries',
             page_out_from_end      : 'Cannot go after last page',
             page_out_from_begin    : 'Cannot go before page 1',
@@ -111,10 +101,8 @@ export const lang = {
             bad_item            : 'Incorrect element',
             item_doesnt_exist   : 'Element does not exist',
             http_error          : 'Server communication error',
-            data_provider_error :
-                'dataProvider error. Check the console for details.',
-            i18n_error          :
-                'Cannot load the translations for the specified language',
+            data_provider_error : 'dataProvider error. Check the console for details.',
+            i18n_error          : 'Cannot load the translations for the specified language',
             canceled            : 'Action cancelled',
             logged_out          : 'Your session has ended, please reconnect.',
         },
@@ -132,6 +120,7 @@ export const lang = {
     },
     labels    : {
         read_more : 'Read more',
+        publisher : 'Publisher',
     },
     resources : {
         港聞 : {

@@ -4,7 +4,7 @@ import { Filter, ReferenceInput, SelectInput } from 'react-admin';
 export const ItemFilter = props => (
     <Filter {...props}>
         <ReferenceInput
-            label='Publisher'
+            label='labels.publisher'
             source='source'
             reference='sources'
             allowEmpty

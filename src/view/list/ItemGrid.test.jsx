@@ -1,9 +1,9 @@
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import { render } from 'enzyme';
 import React from 'react';
 import { TestContext } from 'react-admin';
 
-import { CardList } from './CardList';
+import { ItemGrid } from './ItemGrid';
 
 it('mount without errors', () => {
     render(
@@ -13,7 +13,7 @@ it('mount without errors', () => {
                     type : 'dark',
                 },
             })}>
-                <CardList
+                <ItemGrid
                     basePath='/'
                     data={{
                         id1 : {
@@ -41,7 +41,10 @@ it('mount without errors', () => {
                             title       : '',
                         },
                     }}
-                    ids={[ 'id1', 'id2' ]} />
+                    ids={[
+                        'id1',
+                        'id2'
+                    ]} />
             </MuiThemeProvider>
         </TestContext>,
     );

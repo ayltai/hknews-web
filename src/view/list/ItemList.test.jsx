@@ -1,4 +1,4 @@
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import { render } from 'enzyme';
 import React from 'react';
 import { TestContext } from 'react-admin';
@@ -6,14 +6,14 @@ import { TestContext } from 'react-admin';
 import { ItemList } from './ItemList';
 
 const defaultStoreForList = {
-    admin: {
-        resources: {
-            foo: {
-                list: {
-                    ids: [],
-                    params: {},
-                    selectedIds: [],
-                    total: 0,
+    admin : {
+        resources : {
+            foo : {
+                list : {
+                    ids         : [],
+                    params      : {},
+                    selectedIds : [],
+                    total       : 0,
                 },
             },
         },

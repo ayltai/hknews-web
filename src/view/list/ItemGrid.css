@@ -1,0 +1,28 @@
+.Title {
+    font-size: 120% !important;
+    font-weight: bold !important;
+    padding-bottom: 0.75em;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.Description {
+    min-height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+}
+
+.Media {
+    height: 0;
+    padding-top: 56.25%;
+}
+
+.Actions {
+    display: block !important;
+    text-align: right;
+}

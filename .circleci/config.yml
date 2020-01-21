@@ -5,7 +5,7 @@ references:
   ## Cache
 
   cache_key: &cache_key
-    key: cache-{{ checksum "package.json" }}
+    key: cache-{{ checksum "package-lock.json" }}
   restore_cache: &restore_cache
     restore_cache:
       <<: *cache_key
@@ -20,7 +20,7 @@ references:
   config: &config
     working_directory: ~/workspace
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:13
     environment:
       TERM: dumb
 
@@ -36,14 +36,14 @@ jobs:
           command: npm i -D
       - *save_cache
 
-  check_stylesheet:
+  check:
     <<: *config
     steps:
       - checkout
       - *restore_cache
       - run:
-          name: Run linter for stylesheet files
-          command: ./node_modules/.bin/stylelint src/**/*.css public/**/*.css !build/**
+          name: Run linters
+          command: npm run check
 
   test:
     <<: *config
@@ -90,13 +90,12 @@ workflows:
   workflow:
     jobs:
       - dependencies
-      - check_stylesheet:
+      - check:
           requires:
             - dependencies
       - test:
           requires:
             - dependencies
-            - check_stylesheet
       - build:
           requires:
             - dependencies

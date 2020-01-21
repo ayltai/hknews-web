@@ -52,7 +52,6 @@ Serves aggregated news from 10+ local news publishers in Hong Kong. Made with ‚ù
 2. Export environment variables for the API endpoint and project URL
    ```sh
    export REACT_APP_API_ENDPOINT=http://localhost:8080
-   export REACT_APP_PROJECT_URL=https://github.com/ayltai/hknews-web
    ```
 3. Start the server
    ```sh
@@ -73,7 +72,6 @@ npm run test
 1. Export environment variable for the API endpoint and project URL
    ```sh
    export REACT_APP_API_ENDPOINT=https://hknews.dev
-   export REACT_APP_PROJECT_URL=https://github.com/ayltai/hknews-web
    ```
 2. Build for production
    ```sh
@@ -89,11 +87,11 @@ This software is made with the support of open source projects:
 * [NodeJS](https://nodejs.org)
 * [React](https://github.com/facebook/react)
 * [Create React App](https://github.com/facebook/create-react-app)
-* [React Admin](https://github.com/marmelab/react-admin)
-* [Stylelint](https://stylelint.io/)
-* [Material UI](https://github.com/mui-org/material-ui)
+* [React Admin](https://marmelab.com/react-admin)
+* [Material UI](https://material-ui.com)
 * [react-image-lightbox](https://github.com/frontend-collective/react-image-lightbox)
 * [react-timeago](https://github.com/nmn/react-timeago)
+* [Stylelint](https://stylelint.io)
 
 ... and closed source services:
 * [CircleCI](https://circleci.com): Continuous integration and delivery
