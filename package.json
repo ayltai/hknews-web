@@ -43,7 +43,7 @@
         "react-timeago"        : "^4.4.0"
     },
     "devDependencies" : {
-        "@testing-library/jest-dom"   : "^5.0.0",
+        "@testing-library/jest-dom"   : "^5.0.2",
         "@testing-library/react"      : "^9.4.0",
         "@testing-library/user-event" : "^8.0.3",
         "codacy-coverage"             : "^3.4.0",
