@@ -40,14 +40,14 @@ Serves aggregated news from 10+ local news publishers in Hong Kong. Made with ‚ù
 ## HK News Infrastructure
 [hknews-infrastructure](https://github.com/ayltai/hknews-infrastructure)
 
-### Installation
+## Installation
 1. Install [NodeJS](https://nodejs.org)
 2. Install dependencies
    ```sh
    npm i -D
    ```
 
-### Run development server
+## Run development server
 1. Refer to [hknews-backend](https://github.com/ayltai/hknews-backend) project to run HK News backend server locally
 2. Export environment variables for the API endpoint and project URL
    ```sh
@@ -58,17 +58,17 @@ Serves aggregated news from 10+ local news publishers in Hong Kong. Made with ‚ù
    npm start
    ```
 
-### Run linters
+## Run linters
 ```sh
 npm run check
 ```
 
-### Run unit tests
+## Run unit tests
 ```sh
 npm run test
 ```
 
-### Run production server
+## Run production server
 1. Export environment variable for the API endpoint and project URL
    ```sh
    export REACT_APP_API_ENDPOINT=https://hknews.dev
@@ -92,6 +92,8 @@ This software is made with the support of open source projects:
 * [react-image-lightbox](https://github.com/frontend-collective/react-image-lightbox)
 * [react-timeago](https://github.com/nmn/react-timeago)
 * [Stylelint](https://stylelint.io)
+* [TSLint](https://palantir.github.io/tslint)
+* [Enzyme](https://airbnb.io/enzyme)
 
 ... and closed source services:
 * [CircleCI](https://circleci.com): Continuous integration and delivery

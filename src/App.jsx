@@ -43,16 +43,16 @@ export const App = props => {
                         <AppBar
                             color='default'
                             userMenu={<div />}
+                            logoutButton={false}
                             {...appBarProps}>
                             <Typography
                                 variant='h6'
                                 color='inherit'>
                                 HK News
                             </Typography>
-                            <span
-                                style={{
-                                    flex : 1,
-                                }} />
+                            <span style={{
+                                flex : 1,
+                            }} />
                             <Tooltip title='Toggle light/dark theme'>
                                 <Switch
                                     checked={state.checked}
