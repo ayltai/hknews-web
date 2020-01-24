@@ -43,6 +43,7 @@ export const App = props => {
                         <AppBar
                             color='default'
                             userMenu={<div />}
+                            logoutButton={false}
                             {...appBarProps}>
                             <Typography
                                 variant='h6'
