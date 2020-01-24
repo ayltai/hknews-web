@@ -1,70 +1,70 @@
 {
-    "name"            : "hknews-web",
-    "description"     : "Serves aggregated news from 10+ local news publishers in Hong Kong. Made with ❤",
-    "version"         : "1.0.0",
-    "author"          : "Alan Tai",
-    "repository"      : {
-        "type" : "git",
-        "url"  : "git+https://github.com/ayltai/hknews-web.git"
+    "name": "hknews-web",
+    "description": "Serves aggregated news from 10+ local news publishers in Hong Kong. Made with ❤",
+    "version": "1.0.0",
+    "author": "Alan Tai",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ayltai/hknews-web.git"
     },
-    "bugs"            : {
-        "url" : "https://github.com/ayltai/hknews-web/issues"
+    "bugs": {
+        "url": "https://github.com/ayltai/hknews-web/issues"
     },
-    "homepage"        : "https://hknews.dev/",
-    "license"         : "Apache-2.0",
-    "keywords"        : [
+    "homepage": "https://hknews.dev/",
+    "license": "Apache-2.0",
+    "keywords": [
         "news",
         "newspaper",
         "hknews"
     ],
-    "scripts"         : {
-        "check"           : "npm run check-stylelint && npm run check-eslint",
-        "check-eslint"    : "./node_modules/.bin/eslint src/**/*.js*",
-        "check-stylelint" : "./node_modules/.bin/stylelint src/**/*.css public/**/*.css !build/**",
-        "codacy"          : "cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
-        "codecov"         : "./node_modules/.bin/codecov",
-        "serve"           : "./node_modules/.bin/serve -s build",
-        "start"           : "react-scripts start",
-        "build"           : "react-scripts build",
-        "test"            : "react-scripts test --ci --no-watchman --coverage --coverageDirectory=coverage --forceExit",
-        "eject"           : "react-scripts eject"
+    "scripts": {
+        "check": "npm run check-stylelint && npm run check-eslint",
+        "check-eslint": "./node_modules/.bin/eslint src/**/*.js*",
+        "check-stylelint": "./node_modules/.bin/stylelint src/**/*.css public/**/*.css !build/**",
+        "codacy": "cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
+        "codecov": "./node_modules/.bin/codecov",
+        "serve": "./node_modules/.bin/serve -s build",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --ci --no-watchman --coverage --coverageDirectory=coverage --forceExit",
+        "eject": "react-scripts eject"
     },
-    "dependencies"    : {
-        "@material-ui/core"    : "^4.8.3",
-        "@material-ui/icons"   : "^4.5.1",
-        "ra-i18n-polyglot"     : "^3.1.2",
-        "prop-types"           : "^15.7.2",
-        "react"                : "^16.12.0",
-        "react-admin"          : "^3.1.2",
-        "react-dom"            : "^16.12.0",
-        "react-image-lightbox" : "^5.1.1",
-        "react-router-dom"     : "^5.1.2",
-        "react-scripts"        : "^3.3.0",
-        "react-timeago"        : "^4.4.0"
+    "dependencies": {
+        "@material-ui/core": "^4.9.0",
+        "@material-ui/icons": "^4.5.1",
+        "ra-i18n-polyglot": "^3.1.3",
+        "prop-types": "^15.7.2",
+        "react": "^16.12.0",
+        "react-admin": "^3.1.3",
+        "react-dom": "^16.12.0",
+        "react-image-lightbox": "^5.1.1",
+        "react-router-dom": "^5.1.2",
+        "react-scripts": "^3.3.0",
+        "react-timeago": "^4.4.0"
     },
-    "devDependencies" : {
-        "@testing-library/jest-dom"   : "^5.0.0",
-        "@testing-library/react"      : "^9.4.0",
-        "@testing-library/user-event" : "^8.0.3",
-        "codacy-coverage"             : "^3.4.0",
-        "codecov"                     : "^3.6.1",
-        "enzyme"                      : "^3.11.0",
-        "enzyme-adapter-react-16"     : "^1.15.2",
-        "eslint"                      : "^6.8.0",
-        "serve"                       : "^11.3.0",
-        "stylelint"                   : "^13.0.0",
-        "stylelint-config-standard"   : "^19.0.0"
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.0.2",
+        "@testing-library/react": "^9.4.0",
+        "@testing-library/user-event": "^8.0.5",
+        "codacy-coverage": "^3.4.0",
+        "codecov": "^3.6.2",
+        "enzyme": "^3.11.0",
+        "enzyme-adapter-react-16": "^1.15.2",
+        "eslint": "^6.8.0",
+        "serve": "^11.3.0",
+        "stylelint": "^13.0.0",
+        "stylelint-config-standard": "^19.0.0"
     },
-    "eslintConfig"    : {
-        "extends" : "react-app"
+    "eslintConfig": {
+        "extends": "react-app"
     },
-    "browserslist"    : {
-        "production"  : [
+    "browserslist": {
+        "production": [
             ">0.2%",
             "not dead",
             "not op_mini all"
         ],
-        "development" : [
+        "development": [
             "last 1 chrome version",
             "last 1 firefox version",
             "last 1 safari version"
