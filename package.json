@@ -30,12 +30,12 @@
         "eject"           : "react-scripts eject"
     },
     "dependencies"    : {
-        "@material-ui/core"    : "^4.9.3",
+        "@material-ui/core"    : "^4.9.4",
         "@material-ui/icons"   : "^4.9.1",
-        "ra-i18n-polyglot"     : "^3.2.2",
+        "ra-i18n-polyglot"     : "^3.2.3",
         "prop-types"           : "^15.7.2",
         "react"                : "^16.12.0",
-        "react-admin"          : "^3.2.2",
+        "react-admin"          : "^3.2.3",
         "react-dom"            : "^16.12.0",
         "react-image-lightbox" : "^5.1.1",
         "react-router-dom"     : "^5.1.2",
@@ -44,7 +44,7 @@
     },
     "devDependencies" : {
         "@testing-library/jest-dom"   : "^5.1.1",
-        "@testing-library/react"      : "^9.4.0",
+        "@testing-library/react"      : "^9.4.1",
         "@testing-library/user-event" : "^10.0.0",
         "codacy-coverage"             : "^3.4.0",
         "codecov"                     : "^3.6.5",
