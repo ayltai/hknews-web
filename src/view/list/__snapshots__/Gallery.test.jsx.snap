@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div>
+  <div
+    caption="caption"
+    className="RaSingleFieldList-root-1"
+  >
+    <img
+      onClick={[Function]}
+      record={
+        Object {
+          "caption": "1",
+          "source": "image1",
+        }
+      }
+      src="image1"
+    />
+    <img
+      onClick={[Function]}
+      record={
+        Object {
+          "caption": "2",
+          "source": "image2",
+        }
+      }
+      src="image1"
+    />
+  </div>
+</div>
+`;

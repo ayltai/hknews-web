@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div
+  className="show-page RaShow-root-1"
+>
+  
+  <div
+    className="RaShow-main-2 RaShow-noActions-3"
+  >
+    <div
+      className="MuiPaper-root MuiCard-root RaShow-card-4 MuiPaper-elevation1 MuiPaper-rounded"
+    />
+  </div>
+</div>
+`;

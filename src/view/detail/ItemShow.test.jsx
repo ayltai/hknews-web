@@ -1,17 +1,31 @@
-import { mount } from 'enzyme';
+import { mount, } from 'enzyme';
 import React from 'react';
-import { TestContext } from 'react-admin';
-import { act } from 'react-dom/test-utils';
+import { TestContext, } from 'react-admin';
+import { act, } from 'react-dom/test-utils';
+import renderer from 'react-test-renderer';
 
-import { ItemShow } from './ItemShow';
+import { ItemShow, } from './ItemShow';
 
-it('mount without errors', async () => {
-    await act(async () => {
-        mount(
+describe('', () => {
+    it('', () => {
+        expect(renderer.create(
             <TestContext>
                 <ItemShow
                     basePath='/'
                     resource='foo' />
-            </TestContext>);
+            </TestContext>
+        ).toJSON()).toMatchSnapshot();
+    });
+
+    it('mount without errors', async () => {
+        await act(async () => {
+            mount(
+                <TestContext>
+                    <ItemShow
+                        basePath='/'
+                        resource='foo' />
+                </TestContext>
+            );
+        });
     });
 });

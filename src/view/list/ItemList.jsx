@@ -1,9 +1,9 @@
 import React from 'react';
-import { List, Pagination } from 'react-admin';
+import { List, Pagination, } from 'react-admin';
 
 import * as Config from '../../Config';
-import { ItemFilter } from './ItemFilter';
-import { ItemGrid } from './ItemGrid';
+import { ItemFilter, } from './ItemFilter';
+import { ItemGrid, } from './ItemGrid';
 
 export class ItemList extends React.PureComponent {
     componentDidUpdate = () => {
