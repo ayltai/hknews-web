@@ -11,6 +11,8 @@
 
 Serves aggregated news from 10+ local news publishers in Hong Kong. Made with ❤
 
+[![Buy me a coffee](https://img.shields.io/static/v1?label=Buy%20me%20a&message=coffee&color=important&style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://buymeacoff.ee/ayltai)
+
 ## Features
 * Support text, image and video news
 * Read news from 10+ local news publishers
