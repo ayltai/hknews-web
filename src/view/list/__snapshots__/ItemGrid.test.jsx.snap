@@ -27,7 +27,7 @@ exports[` 1`] = `
             <img
               alt=""
               height={40}
-              src="http://localhost:8080undefined"
+              src="https://hknews.devundefined"
               title=""
               width={40}
             />
@@ -140,7 +140,6 @@ exports[` 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root RaButton-smallIcon-195"
                 focusable="false"
-                role="presentation"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -175,7 +174,7 @@ exports[` 1`] = `
             <img
               alt=""
               height={40}
-              src="http://localhost:8080undefined"
+              src="https://hknews.devundefined"
               title=""
               width={40}
             />
@@ -288,7 +287,6 @@ exports[` 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root RaButton-smallIcon-195"
                 focusable="false"
-                role="presentation"
                 viewBox="0 0 24 24"
               >
                 <path
