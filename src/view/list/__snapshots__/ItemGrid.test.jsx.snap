@@ -140,7 +140,6 @@ exports[` 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root RaButton-smallIcon-195"
                 focusable="false"
-                role="presentation"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -288,7 +287,6 @@ exports[` 1`] = `
                 aria-hidden="true"
                 className="MuiSvgIcon-root RaButton-smallIcon-195"
                 focusable="false"
-                role="presentation"
                 viewBox="0 0 24 24"
               >
                 <path
