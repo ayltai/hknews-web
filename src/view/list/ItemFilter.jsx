@@ -9,7 +9,9 @@ export const ItemFilter = props => (
             reference='sources'
             allowEmpty
             alwaysOn>
-            <SelectInput optionText='name' />
+            <SelectInput
+                optionText='name'
+                variant='standard' />
         </ReferenceInput>
     </Filter>
 );
