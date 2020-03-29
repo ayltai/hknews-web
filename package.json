@@ -30,7 +30,7 @@
         "eject"           : "./node_modules/.bin/react-scripts eject"
     },
     "dependencies"    : {
-        "@material-ui/core"    : "^4.9.7",
+        "@material-ui/core"    : "^4.9.8",
         "@material-ui/icons"   : "^4.9.1",
         "ra-i18n-polyglot"     : "^3.3.3",
         "prop-types"           : "^15.7.2",
