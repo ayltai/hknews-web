@@ -40,9 +40,7 @@ exports[` 1`] = `
             >
               <span
                 className="MuiTypography-root MuiTypography-body2"
-              >
-                
-              </span>
+              />
             </span>
             <span
               className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
@@ -187,9 +185,7 @@ exports[` 1`] = `
             >
               <span
                 className="MuiTypography-root MuiTypography-body2"
-              >
-                
-              </span>
+              />
             </span>
             <span
               className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
