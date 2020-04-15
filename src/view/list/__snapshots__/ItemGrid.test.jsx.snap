@@ -27,7 +27,7 @@ exports[` 1`] = `
             <img
               alt=""
               height={40}
-              src="http://localhost:8080undefined"
+              src="https://hknews.devundefined"
               title=""
               width={40}
             />
@@ -172,7 +172,7 @@ exports[` 1`] = `
             <img
               alt=""
               height={40}
-              src="http://localhost:8080undefined"
+              src="https://hknews.devundefined"
               title=""
               width={40}
             />
