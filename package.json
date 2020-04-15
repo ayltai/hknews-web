@@ -1,7 +1,7 @@
 {
     "name": "hknews-web",
     "description": "Serves aggregated news from 10+ local news publishers in Hong Kong. Made with ❤",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "author": "Alan Tai",
     "repository": {
         "type": "git",
