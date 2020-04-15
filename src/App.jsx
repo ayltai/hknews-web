@@ -11,7 +11,7 @@ import { ItemList } from './view/list/ItemList';
 const palette = Config.PALETTE;
 
 export const App = props => {
-    const [state, setState] = React.useState({
+    const [ state, setState ] = React.useState({
         checked : false,
         theme   : {
             palette,
@@ -44,7 +44,6 @@ export const App = props => {
                             <AppBar
                                 color='default'
                                 userMenu={<div />}
-                                logoutButton={false}
                                 {...appBarProps}>
                                 <Typography
                                     variant='h6'

@@ -74,6 +74,6 @@ export const ItemGrid = ({ ids, data, basePath, }) => (
 
 ItemGrid.propTypes = {
     ids      : PropTypes.arrayOf(PropTypes.string),
-    data     : PropTypes.arrayOf(PropTypes.object),
+    data     : PropTypes.object,
     basePath : PropTypes.string,
 };
