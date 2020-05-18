@@ -54,7 +54,7 @@
         "react-scripts": "^3.4.1",
         "react-test-renderer": "^16.13.1",
         "serve": "^11.3.0",
-        "stylelint": "^13.4.0",
+        "stylelint": "^13.4.1",
         "stylelint-config-standard": "^20.0.0"
     },
     "resolutions": {
