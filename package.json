@@ -37,7 +37,7 @@
         "ra-core": "^3.5.5",
         "ra-language-english": "^3.5.5",
         "react": "^16.13.1",
-        "react-admin": "^3.5.5",
+        "react-admin": "^3.6.0",
         "react-dom": "^16.13.1",
         "react-image-lightbox": "^5.1.1",
         "react-router-dom": "^5.2.0",
