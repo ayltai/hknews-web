@@ -35,7 +35,7 @@
         "ra-i18n-polyglot": "^3.6.2",
         "prop-types": "^15.7.2",
         "ra-core": "^3.6.2",
-        "ra-language-english": "^3.6.1",
+        "ra-language-english": "^3.6.2",
         "react": "^16.13.1",
         "react-admin": "^3.6.2",
         "react-dom": "^16.13.1",
